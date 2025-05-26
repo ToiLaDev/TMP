@@ -1,0 +1,35 @@
+{
+  "app": {
+    "name": "TMP"
+  },
+  "buttons": {
+    "cancel": "Cancel",
+    "sign_out": "Logout",
+    "mark_read": "Mark all as read"
+  },
+  "dialogs": {
+    "confirm": {
+      "title": "Confirm",
+      "message": "Are you sure?"
+    },
+    "logout": {
+      "title": "Confirm",
+      "message": "Are you sure you want to logout?"
+    }
+  },
+  "login": {
+    "welcome": "Welcome to TMP",
+    "email": "Email",
+    "password": "Password",
+    "remember": "Remember me",
+    "forgot_password": "Forgot password?",
+    "sign_in": "Login"
+  },
+  "navigation": {
+    "profile": "Profile",
+    "settings": "Settings",
+    "messages": "Messages",
+    "languages": "Languages",
+    "notifications": "Notifications"
+  }
+}

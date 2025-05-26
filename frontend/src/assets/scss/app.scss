@@ -1,0 +1,53 @@
+@layer tailwind-base, theme, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+@layer theme {
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  :root {
+    --body-background: var(--p-surface-50);
+  }
+  .dark {
+    --body-background: var(--p-surface-950);
+  }
+
+  body {
+    background: var(--body-background);
+  }
+
+  .p-popover-content {
+    padding: 0.25rem !important;
+  }
+
+  .p-popover:after, .p-popover:before {
+    left: calc(var(--p-popover-arrow-left) + 1rem) !important;
+  }
+
+  .p-shortcut {
+    @apply ml-auto border border-surface rounded-border bg-surface-100 dark:bg-surface-700 text-xs p-1;
+  }
+
+  .app-icon {
+    line-height: 1;
+  }
+
+  .warning-color {
+    color: var(--p-warning-500);
+  }
+
+  .error-color {
+    color: var(--p-error-500);
+  }
+}
+

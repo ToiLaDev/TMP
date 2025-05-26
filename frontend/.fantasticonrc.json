@@ -1,0 +1,37 @@
+{
+  "inputDir": "./src/assets/icons",
+  "outputDir": "./public/fonts",
+  "fontTypes": [
+    "ttf",
+    "woff",
+    "woff2"
+  ],
+  "assetTypes": [
+    "css"
+  ],
+  "fontsUrl": "",
+  "selector": ".app-icon",
+  "normalize": true,
+  "descent": 35,
+  "formatOptions": {
+    "svg": {
+      "metadata": {
+        "by": "Mr. VnS"
+      },
+      "ascent": 0.5
+    },
+    "json": {
+      "indent": 2
+    },
+    "ts": {
+      "types": [
+        "constant",
+        "literalId"
+      ],
+      "singleQuotes": true
+    }
+  },
+  "templates": {
+    "css": "./src/assets/icon-template.hbs"
+  }
+}

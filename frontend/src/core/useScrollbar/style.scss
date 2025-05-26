@@ -1,0 +1,58 @@
+.scrollbar {
+  overflow: hidden !important;
+  overflow-anchor: none;
+  -ms-overflow-style: none;
+  touch-action: auto;
+  -ms-touch-action: auto;
+  position: relative;
+  .sb-rail-x {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1 !important;
+    .sb-thumb-x {
+      background-color: #c1c1c1 !important;
+    }
+  }
+  .sb-rail-y {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    width: 10px;
+    background-color: transparent;
+    transition: background-color .2s linear, opacity .2s linear;
+    -webkit-transition: background-color .2s linear, opacity .2s linear;
+    .sb-thumb-y {
+      position: absolute;
+      width: 6px;
+      background-color: #aaa !important;
+      border-radius: 5px;
+      right: 2px;
+      transition: background-color .2s linear, width .2s ease-in-out;
+      -webkit-transition: background-color .2s linear, width .2s ease-in-out;
+    }
+    &:hover {
+      opacity: 0.9;
+      width: 15px;
+      background-color: #eee !important;
+      .sb-thumb-y {
+        width: 11px;
+        background-color: #999 !important;
+      }
+    }
+  }
+  &:hover, &:focus {
+    &.sb-active-x {
+      .sb-rail-x {
+        display: block;
+        opacity: 0.6;
+      }
+    }
+    &.sb-active-y {
+      .sb-rail-y {
+        opacity: 0.6;
+        display: block;
+      }
+    }
+  }
+}
