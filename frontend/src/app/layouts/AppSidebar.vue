@@ -38,7 +38,6 @@ const sidebarMouseleave = () => {
 }
 
 const menuProfile = ref()
-const menuNotification = ref()
 const menuLanguage = ref()
 const menuProfileItems = computed(() => [
   {
@@ -116,6 +115,10 @@ const userSettingHandle = () => {
   toast.add({ severity: 'success', summary: 'Success', detail: 'userSettingHandle' })
 }
 
+const userLabel = computed(() => {
+  return AUTH.user?.name[0].toUpperCase()
+})
+
 onFetchApiError(({ error, context }: any) => {
   toast.add({ severity: 'error', summary: 'Error', detail: error.message })
 })
@@ -179,13 +182,7 @@ onFetchApiError(({ error, context }: any) => {
               @click="modeHandle"
             />
             <Avatar
-              icon="app-icon icon-bell"
-              shape="circle"
-              class="cursor-pointer"
-              @click="menuNotification.toggle($event)"
-            />
-            <Avatar
-              :label="AUTH.user?.avatar ? '' : AUTH.user?.label"
+              :label="AUTH.user?.avatar ? '' : userLabel"
               :image="AUTH.user?.avatar"
               shape="circle"
               class="cursor-pointer"
@@ -199,7 +196,7 @@ onFetchApiError(({ error, context }: any) => {
                 <template #start>
                   <span class="inline-flex items-center gap-1 px-2 py-2">
                     <Avatar
-                      :label="AUTH.user?.avatar ? '' : AUTH.user?.label"
+                      :label="AUTH.user?.avatar ? '' : userLabel"
                       :image="AUTH.user?.avatar"
                       class="mr-2"
                       shape="circle"

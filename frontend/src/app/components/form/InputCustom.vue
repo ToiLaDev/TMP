@@ -8,6 +8,8 @@ interface Props {
   readonly?: boolean
   error?: string
   inputClass?: string
+  id?: string
+  inputId?: string
   value?: string
 }
 
@@ -20,8 +22,13 @@ const props = withDefaults(defineProps<Props>(), {
 const modelValue = defineModel<string>()
 
 const comProps = computed(() => {
-  if (props.value !== undefined) return props
   const { value, ...rest } = props
+
+  if (props.type === 'password') {
+    rest.inputId = props.id
+    rest.id = undefined
+  }
+  if (value !== undefined) return { ...rest, value }
   return rest
 })
 </script>
