@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
+            $table->dateTime('due_date');
+            $table->enum('priority', ['low', 'medium', 'high'])->default('medium');
+            $table->enum('status', ['todo', 'in-process', 'done'])->default('todo');
+            $table->unsignedBigInteger('project_id');
             $table->timestamps();
         });
     }
