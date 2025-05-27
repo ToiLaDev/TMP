@@ -20,7 +20,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www
 
 # Copy existing application
-COPY . .
+COPY ./backend .
 
 # Install dependencies
 RUN composer install

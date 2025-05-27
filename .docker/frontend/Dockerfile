@@ -1,10 +1,10 @@
-FROM node:20
+FROM node:22.16.0
 
 # Set working directory
 WORKDIR /app
 
 # Copy app files
-COPY . .
+COPY ./frontend .
 
 # Install dependencies
 RUN npm install
