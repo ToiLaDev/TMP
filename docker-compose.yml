@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: .docker/backend/Dockerfile
+    container_name: laravel-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/var/www
+    depends_on:
+      - mysql
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: laravel
+      DB_USERNAME: root
+      DB_PASSWORD: root
+
+  frontend:
+    build:
+      context: .
+      dockerfile: .docker/frontend/Dockerfile
+    container_name: vue-frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+    command: npm run dev -- --host
+    depends_on:
+      - backend
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
