@@ -47,3 +47,11 @@ export const ERROR_MESSAGE = {
   VALIDATION: 'errors.422_message',
   SERVER: 'errors.500_message'
 }
+
+export const PER_PAGE = [20, 50, 100]
+export interface GetListParams {
+  page?: number
+  limit?: number
+  orders?: any
+  filters?: any
+}

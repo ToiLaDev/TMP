@@ -17,7 +17,14 @@ const autoLoadRoute = async () => {
       Promise.all(promises).then((values) => {
         resolve(
           values.reduce((acc, cur) => {
-            acc.push(cur.default)
+            if (Array.isArray(cur.default)) {
+              for (const route of cur.default) {
+                acc.push(route)
+              }
+            }
+            else {
+              acc.push(cur.default)
+            }
             return acc
           }, [])
         )

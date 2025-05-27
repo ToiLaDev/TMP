@@ -9,7 +9,8 @@ const router = useRouter()
 
 IFS.setMenus([
   { label: 'Dashboard', icon: 'app-icon icon-gauge', route: '/' },
-  { separator: true, label: 'Label' }
+  { label: 'Projects', icon: 'app-icon icon-gauge', route: '/projects' },
+  // { separator: true, label: 'Label' }
 ])
 
 </script>
@@ -43,7 +44,9 @@ IFS.setMenus([
             custom
           >
             <a
-              :class="['p-panelmenu-header-link flex', item.class]"
+              :class="['p-panelmenu-header-link flex', {
+                'active': active,
+              }]"
               :href="href"
               :id="item.id"
               @click="navigate"

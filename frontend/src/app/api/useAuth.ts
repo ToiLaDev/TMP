@@ -21,7 +21,7 @@ export const userLogin = async (credentials: LoginCredentials) => {
 
 export const userLogout = async () => {
   const { error } = await useFetchApi(LOGOUT_API_URL).post({})
-  return error.value
+  return toValue(error)
 }
 
 export const userInfo = async () => {

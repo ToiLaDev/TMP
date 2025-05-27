@@ -1,0 +1,25 @@
+{
+  "project": {
+    "title": "Projects",
+    "new": "Create New Project",
+    "detail": "Project Details",
+    "table": {
+      "id": "ID",
+      "title": "Title",
+      "description": "Description",
+      "status": "Status",
+      "createdAt": "Created At",
+      "updatedAt": "Updated At"
+    },
+    "buttons": {
+      "new": "New Project",
+      "save": "Save Project",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive"
+    }
+  }
+}
