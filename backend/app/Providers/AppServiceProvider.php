@@ -12,6 +12,11 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         //
+        // Register AuthService
+        $this->app->bind(
+            \App\Domain\Auth\AuthServiceInterface::class,
+            \App\Infrastructure\Auth\LaravelAuthService::class
+        );
     }
 
     /**

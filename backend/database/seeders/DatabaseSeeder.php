@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Infrastructure\Persistence\Eloquent\Models\UserModel;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -16,9 +17,12 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        UserModel::factory()->create([
+        DB::table('users')->insert([
             'name' => 'Test User',
             'email' => 'test@example.com',
+            'password' => Hash::make('123456'),
+            'created_at' => now(),
+            'updated_at' => now(),
         ]);
     }
 }

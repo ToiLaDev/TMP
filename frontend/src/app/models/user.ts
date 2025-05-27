@@ -11,7 +11,6 @@ export class User extends BaseModel {
   id: number | null = null
   name: string = ''
   email: string = ''
-  label?: string
   avatar?: string
 
   // _hidden = ['label', 'email']
